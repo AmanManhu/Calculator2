@@ -1,8 +1,12 @@
 package com.example.myapplication4;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.button.MaterialButton;
 public class MainActivity extends AppCompatActivity {
     TextView tv_display;
+    Button SecretButton1;
     String operation;
     private int num1, num2;
 
@@ -31,9 +36,22 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         tv_display = findViewById(R.id.tv_display);
-
-
+        SecretButton1 = findViewById(R.id.SecretButton);
+        findViewById(R.id.SecretButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSecretScreeen();
+            }
+        });
         unitClick();
+    }
+
+    private void openSecretScreeen() {
+        String ResultText = tv_display.getText().toString();
+        Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+        intent.putExtra("text",ResultText);
+       startActivity(intent);
+
     }
 
     private void unitClick() {
@@ -41,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
 
         });
@@ -48,94 +67,103 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
-
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_ac).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_equal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Operation(v);
+                    SecretButton1.setVisibility(View.VISIBLE);
             }
         });
-        findViewById(R.id.btn_X).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Operation(v);
-            }
-        });
+
         findViewById(R.id.btn_plus).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Operation(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_minnus).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Operation(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_delenie).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Operation(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_7).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_8).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
         findViewById(R.id.btn_9).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onNumberClick(v);
+                SecretButton1.setVisibility(View.INVISIBLE);
             }
         });
     }
+
 
     private void onNumberClick(View view) {
 
@@ -188,4 +216,5 @@ public class MainActivity extends AppCompatActivity {
             tv_display.setText(String.valueOf(result));
         }
     }
-}
+
+        }
