@@ -37,4 +37,8 @@
 <item name="android:layout_marginTop">10dp</item>
 <item name="backgroundTint">@color/grey</item>
 </style>
+    <style name="Myslider" parent="Widget.MaterialComponents.Slider">
+        <item name="thumbColor">@android:color/transparent</item>
+        <item name="android:thumb">@drawable/double_slider</item>
+    </style>
 </resources>

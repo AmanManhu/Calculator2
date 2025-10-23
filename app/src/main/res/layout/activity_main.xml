@@ -15,6 +15,7 @@
         app:layout_constraintBottom_toTopOf="@id/linearLyout">
 
         <HorizontalScrollView
+            android:id="@+id/ScrollView"
             android:layout_gravity="bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -33,7 +34,16 @@
 
         </HorizontalScrollView>
     </FrameLayout>
-
+    <Button
+        android:id="@+id/SecretButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/blackBlue"
+        android:text="Secret Button"/>
 
 
 
